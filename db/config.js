@@ -1,14 +1,10 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const clientOptions = { serverApi: { version: "1", strict: true, deprecationErrors: true } };
-
 const dbConnection = async () => {
     try {
-        console.log(process.env.STR_CONN);
         mongoose.set("strictQuery", false);
         await mongoose.connect(process.env.STR_CONN);
-
         console.log(`Mongo DB conectada at ${new Date().toLocaleString()}`);
     } catch (error) {
         console.log(error);
