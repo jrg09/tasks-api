@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const { dbConnection, dbDisconnect } = require("./db/config");
-
+const path = require("path");
 require("dotenv").config();
 
 //base de datos
@@ -11,6 +11,8 @@ dbConnection();
 const app = express();
 
 //habilitar directorio público
+console.log(__dirname);
+//app.use("/public", express.static(path.join(__dirname,"public")));
 app.use(express.static("public"));
 
 //lectura y parseo de body
