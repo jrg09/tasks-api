@@ -28,6 +28,7 @@ app.use(checkUserId);
 
 //rutas
 app.use("/api/v1/tasks", require("./routes/tasks"));
+app.use("/api/v1/payments", require("./routes/payments"));
 
 const port = process.env.PORT || 8099;
 
